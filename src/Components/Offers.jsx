@@ -3,7 +3,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import {Box} from "@mui/material";
+import {Box, Card, CardActionArea, CardMedia} from "@mui/material";
 import img1 from "../assets/Offers/1.png";
 import img2 from "../assets/Offers/2.png";
 import {A11y, Pagination} from "swiper/modules";
@@ -31,12 +31,11 @@ export default function Offers() {
 					>
 						{slides.map((slide, i) => (
 							<SwiperSlide key={i}>
-								<Box
-									component='img'
-									src={slide.img}
-									alt={slide.text}
-									sx={{ width: '25vw', borderRadius: '1rem' }}
-								/>
+								<Card sx={{ width: '25vw', borderRadius: '1.5rem' }}>
+									<CardActionArea>
+										<CardMedia component='img' src={slide.img} alt={slide.text}/>
+									</CardActionArea>
+								</Card>
 							</SwiperSlide>
 						))}
 					</Swiper>
