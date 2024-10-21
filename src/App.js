@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from "react";
 import Navbar from "./Components/Navbar";
 import FindBySpecialisation from "./Components/FindBySpecialisation";
+import Offers from "./Components/Offers";
 
 const theme = createTheme();
 
@@ -14,6 +15,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
           <Navbar />
+          <Offers />
           <FindBySpecialisation />
       </ThemeProvider>
   );
