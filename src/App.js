@@ -9,6 +9,7 @@ import FindBySpecialisation from "./Components/FindBySpecialisation";
 import Offers from "./Components/Offers";
 import MedicalSpecialist from "./Components/MedicalSpecialist";
 import BlogAndNews from "./Components/BlogAndNews";
+import FrequentlyAskedQuestions from "./Components/FrequentlyAskedQuestions";
 
 const theme = createTheme();
 
@@ -17,6 +18,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
           <Navbar />
+          <FrequentlyAskedQuestions />
           <BlogAndNews />
           <MedicalSpecialist />
           <Offers />
