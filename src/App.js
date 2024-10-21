@@ -5,6 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from "react";
 import Navbar from "./Components/Navbar";
+import FindBySpecialisation from "./Components/FindBySpecialisation";
 
 const theme = createTheme();
 
@@ -13,6 +14,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
           <Navbar />
+          <FindBySpecialisation />
       </ThemeProvider>
   );
 }

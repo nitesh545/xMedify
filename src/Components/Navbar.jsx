@@ -12,12 +12,12 @@ export default function Navbar() {
 					cleanliness.</Typography>
 			</Toolbar>
 			<Toolbar sx={{backgroundColor: 'white'}}>
-				<Box sx={{display: 'flex', justifyContent: 'space-between', width: '100vw'}}>
+				<Box sx={{display: 'flex', justifyContent: 'space-between', width: '100vw', margin: '2rem'}}>
 					<Box component="img" src={logo} alt="App Image" sx={{height: '1.75rem',}}/>
-					<Box>
+					<Box sx={{}}>
 						{
 							btns.map((btn, index) => (
-								<Button key={index} variant='text' sx={{color: 'black'}}>{btn}</Button>))
+								<Button key={index} variant='text' sx={{color: 'black', margin: '0.5rem'}}>{btn}</Button>))
 						}
 						<Button variant="contained">My Bookings</Button>
 					</Box>
