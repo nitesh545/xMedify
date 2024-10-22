@@ -11,6 +11,7 @@ export default function BlogAndNews() {
 	]
 	return (
 		<Box sx={{width: '100vw', height: '100vh'}}>
+			<Box sx={{marginTop: '10rem'}}>
 			<Typography variant="h6" fontWeight='bold' align='center' color='rgba(42, 167, 255, 1)'>Blog & Post</Typography>
 			<Typography variant="h2" fontWeight='bold' align='center' color='rgba(27, 60, 116, 1)'>Read Our Latest News</Typography>
 			<Box sx={{paddingTop: '5rem', paddingLeft: '10rem', paddingRight: '10rem'}}>
@@ -37,6 +38,7 @@ export default function BlogAndNews() {
 						))
 					}
 				</Grid2>
+			</Box>
 			</Box>
 		</Box>
 	);

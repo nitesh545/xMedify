@@ -19,9 +19,10 @@ export default function MedicalSpecialist() {
 		{img: img3, text: 'Dr. Ankur Sharma', category: 'Medicine', alt: '100OFF icon'},
 	];
 	return (
-		<Box sx={{width: '100vw', height: '100vh'}}>
+		<Box sx={{width: '100vw', height: '80vh'}}>
+			<Box sx={{marginTop: '2.5rem'}}>
 			<Typography variant='h2' fontWeight='bold' align='center' color='rgba(27, 60, 116, 1)'>Our Medical Specialists</Typography>
-			<Box sx={{pt: '10rem'}}>
+			<Box sx={{pt: '5rem'}}>
 				<Box sx={{position: 'relative', paddingBottom: '40px'}}>
 					<Swiper
 						modules={[Pagination, A11y]}
@@ -49,6 +50,7 @@ export default function MedicalSpecialist() {
 					</Swiper>
 					<Box className="swiper-pagination-two App" sx={{position: 'absolute', bottom: 0, left: 0, right: 0}}/>
 				</Box>
+			</Box>
 			</Box>
 		</Box>
 	);

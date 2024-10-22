@@ -16,7 +16,7 @@ export default function Offers() {
 		{img: img2, text: '30OFF', alt: '30OFF icon'},
 	];
 	return (
-		<Box sx={{width: '100vw', height: '60vh'}}>
+		<Box sx={{width: '100vw', height: '50vh'}}>
 			<Box sx={{padding: '10rem'}}>
 				<Box sx={{ position: 'relative', paddingBottom: '40px' }}>
 					<Swiper

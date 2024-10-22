@@ -33,7 +33,7 @@ export default function FindBySpecialisation() {
 				alignContent: 'center',
 			}}
 		>
-			<Typography align="center" variant="h4" fontWeight="bold" gutterBottom>
+			<Typography align="center" variant="h2" fontWeight="bolder" color='rgba(27, 60, 116, 1)' mb={12}>
 				Find By Specialisation
 			</Typography>
 			<Grid2 container spacing={2} justifyContent="center" sx={{ marginTop: '2rem', marginBottom: '2rem' }}>

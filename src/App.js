@@ -24,13 +24,13 @@ function App() {
 			<CssBaseline/>
 			<Navbar/>
 			<Home />
-			<OurFamilies/>
-			<PatientCaring/>
-			<FrequentlyAskedQuestions/>
-			<BlogAndNews/>
-			<MedicalSpecialist/>
 			<Offers/>
 			<FindBySpecialisation/>
+			<MedicalSpecialist/>
+			<PatientCaring/>
+			<BlogAndNews/>
+			<OurFamilies/>
+			<FrequentlyAskedQuestions/>
 			<DownlaodApp />
 			<Footer />
 		</ThemeProvider>
