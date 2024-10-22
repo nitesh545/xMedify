@@ -41,10 +41,10 @@ const OurFamilies = () => {
 						{
 							stats1.map((stat, i) => (
 								<Card key={i} sx={{mt: '3rem', height: '32vh', width: '12vw'}} elevation={6}>
-									<CardMedia component='img' src={stat.img} alt={i} sx={{width: '40%', ml: 8, mr: 8, mt: 4}}/>
+									<CardMedia component='img' src={stat.img} alt={i} sx={{width: '40%', ml: 8, mr: 8, mt: 6}}/>
 									<CardContent>
-										<Typography variant='h4' align='center' color='rgba(27, 60, 116, 1)'>{stat.numbers}</Typography>
-										<Typography variant='h6' align='center' color='rgba(119, 130, 157, 1)' mt={2}>{stat.text}</Typography>
+										<Typography variant='h2' align='center' color='rgba(27, 60, 116, 1)' fontWeight='bold' mt={2}>{stat.numbers}</Typography>
+										<Typography variant='h6' align='center' color='rgba(119, 130, 157, 1)' mt={3.2}>{stat.text}</Typography>
 									</CardContent>
 								</Card>
 							))
@@ -54,10 +54,10 @@ const OurFamilies = () => {
 						{
 							stats2.map((stat, i) => (
 								<Card key={i} sx={{mt: '3rem', height: '32vh', width: '12vw'}} elevation={6}>
-									<CardMedia component='img' src={stat.img} alt={i} sx={{width: '40%', ml: 8, mr: 8, mt: 4}}/>
+									<CardMedia component='img' src={stat.img} alt={i} sx={{width: '40%', ml: 8, mr: 8, mt: 6}}/>
 									<CardContent>
-										<Typography variant='h4' align='center' color='rgba(27, 60, 116, 1)'>{stat.numbers}</Typography>
-										<Typography variant='h6' align='center' color='rgba(119, 130, 157, 1)' mt={2}>{stat.text}</Typography>
+										<Typography variant='h2' align='center' color='rgba(27, 60, 116, 1)' fontWeight='bold' mt={2}>{stat.numbers}</Typography>
+										<Typography variant='h6' align='center' color='rgba(119, 130, 157, 1)' mt={3.2}>{stat.text}</Typography>
 									</CardContent>
 								</Card>
 							))
