@@ -13,6 +13,7 @@ import FrequentlyAskedQuestions from "./Components/FrequentlyAskedQuestions";
 import PatientCaring from "./Components/PatientCaring";
 import OurFamilies from "./Components/OurFamilies";
 import Footer from "./Components/Footer";
+import DownlaodApp from "./Components/DownlaodApp";
 
 const theme = createTheme();
 
@@ -28,6 +29,7 @@ function App() {
 			<MedicalSpecialist/>
 			<Offers/>
 			<FindBySpecialisation/>
+			<DownlaodApp />
 			<Footer />
 		</ThemeProvider>
 	);
