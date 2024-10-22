@@ -12,6 +12,7 @@ import BlogAndNews from "./Components/BlogAndNews";
 import FrequentlyAskedQuestions from "./Components/FrequentlyAskedQuestions";
 import PatientCaring from "./Components/PatientCaring";
 import OurFamilies from "./Components/OurFamilies";
+import Footer from "./Components/Footer";
 
 const theme = createTheme();
 
@@ -21,12 +22,13 @@ function App() {
 			<CssBaseline/>
 			<Navbar/>
 			<OurFamilies/>
-			{/*<PatientCaring/>*/}
-			{/*<FrequentlyAskedQuestions/>*/}
-			{/*<BlogAndNews/>*/}
-			{/*<MedicalSpecialist/>*/}
-			{/*<Offers/>*/}
-			{/*<FindBySpecialisation/>*/}
+			<PatientCaring/>
+			<FrequentlyAskedQuestions/>
+			<BlogAndNews/>
+			<MedicalSpecialist/>
+			<Offers/>
+			<FindBySpecialisation/>
+			<Footer />
 		</ThemeProvider>
 	);
 }
