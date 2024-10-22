@@ -25,7 +25,7 @@ export default function FrequentlyAskedQuestions() {
 	return (
 		<Box sx={{width: '100vw', height: '100vh'}}>
 			<Box component='img' src={img2} alt="img1" sx={{
-				position: 'absolute',
+				position: 'relative',
 				left: '40vw',
 				top: '50vh',
 				alignItems: 'center',
