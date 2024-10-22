@@ -15,6 +15,7 @@ import OurFamilies from "./Components/OurFamilies";
 import Footer from "./Components/Footer";
 import DownlaodApp from "./Components/DownlaodApp";
 import Home from "./Components/Home";
+import FindPage from "./Components/FindPage";
 
 const theme = createTheme();
 
@@ -24,6 +25,7 @@ function App() {
 			<CssBaseline/>
 			<Navbar/>
 			<Home />
+			<FindPage/>
 			<Offers/>
 			<FindBySpecialisation/>
 			<MedicalSpecialist/>
