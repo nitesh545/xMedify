@@ -64,7 +64,7 @@ function App() {
 			<CssBaseline/>
 			<Navbar/>
 			<Home updateState={updateState} updateCity={updateCity} states={states} cities={cities} state={state} city={city} fetchHospitals={fetchHospitals} />
-			{/*<HospitalCard />*/}
+			<HospitalCard />
 			<Offers/>
 			<FindBySpecialisation/>
 			<MedicalSpecialist/>
