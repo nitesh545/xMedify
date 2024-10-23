@@ -1,8 +1,11 @@
 import React from 'react';
-import {Box, Button, Typography} from "@mui/material";
+import {Box, Button, Modal, Typography} from "@mui/material";
 import img from "../assets/docs.png"
+import FindPage from "./FindPage";
 
-export default function Home() {
+export default function Home(props) {
+	const [open, setOpen] = React.useState(false);
+	const handleClose = () => {setOpen(false);};
 	return (
 		<Box sx={{
 			width: '100vw',
@@ -26,11 +29,14 @@ export default function Home() {
 					py: '1rem',
 					px: '2rem',
 					borderRadius: '0.5rem'
-				}}>Find Centers</Button>
+				}} onClick={()=>setOpen(true)}>Find Centers</Button>
 			</Box>
 			<Box sx={{width: '50vw', mt: '8rem'}}>
 				<Box component='img' src={img} alt='doctorsimg' sx={{width: '50rem'}}/>
 			</Box>
+			<Modal open={open} onClose={handleClose}>
+				<FindPage updateState={props.updateState} updateCity={props.updateCity} states={props.states} cities={props.cities} state={props.state} city={props.city} fetchHospitals={props.fetchHospitals} />
+			</Modal>
 		</Box>
 	);
 }

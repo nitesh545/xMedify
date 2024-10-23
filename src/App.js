@@ -3,7 +3,7 @@ import './App.css';
 import {createTheme, ThemeProvider} from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import React from "react";
+import React, {useEffect} from "react";
 import Navbar from "./Components/Navbar";
 import FindBySpecialisation from "./Components/FindBySpecialisation";
 import Offers from "./Components/Offers";
@@ -20,12 +20,49 @@ import FindPage from "./Components/FindPage";
 const theme = createTheme();
 
 function App() {
+	const [state, setState] = React.useState("");
+	const [states, setStates] = React.useState([]);
+	const [city, setCity] = React.useState("");
+	const [cities, setCities] = React.useState([]);
+	const [allData, setAllData] = React.useState([]);
+
+	useEffect(() => {
+		fetchStates();
+	}, []);
+
+	useEffect(() => {
+		fetchCities();
+	}, [state]);
+
+	useEffect(() => {
+		console.log(allData);
+	}, [allData]);
+
+	const updateState = (value) => {
+		setState(value);
+	}
+
+	const updateCity = (value) => {
+		setCity(value);
+	}
+
+	const fetchStates = () => {
+		fetch("https://meddata-backend.onrender.com/states").then((response) => response.json()).then((res) => setStates(res)).catch((error) => {console.log(error);});
+	}
+
+	const fetchCities = () => {
+		fetch("https://meddata-backend.onrender.com/cities/" + state).then((response) => response.json()).then((res) => setCities(res)).catch((error) => {console.log(error);});
+	}
+
+	const fetchHospitals = () => {
+		fetch(`https://meddata-backend.onrender.com/data?state=${state}&city=${city}`).then((response) => response.json()).then((res) => setAllData(res)).catch((error) => {console.log(error);});
+	}
+
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline/>
 			<Navbar/>
-			<Home />
-			<FindPage/>
+			<Home updateState={updateState} updateCity={updateCity} states={states} cities={cities} state={state} city={city} fetchHospitals={fetchHospitals} />
 			<Offers/>
 			<FindBySpecialisation/>
 			<MedicalSpecialist/>
