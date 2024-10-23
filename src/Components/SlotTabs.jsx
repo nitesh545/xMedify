@@ -41,7 +41,7 @@ const slots = [
 	{dayTime: 'Evening', timeSlots: ["06:00 PM", "06:30 PM", "07:00 PM", "07:30 PM"]},
 ];
 
-export default function SlotTabs() {
+export default function SlotTabs(props) {
 	const [value, setValue] = React.useState(0);
 
 	const handleChange = (event, newValue) => {
@@ -68,7 +68,7 @@ export default function SlotTabs() {
 									{
 										slot.timeSlots.map((timeSlot, i) => (
 											<Box key={i} ml={4}>
-												<Button variant='outlined'>{timeSlot}</Button>
+												<Button variant='outlined' onClick={()=>props.updateSlotSelected(timeSlot)}>{timeSlot}</Button>
 											</Box>
 										))
 									}
@@ -90,7 +90,7 @@ export default function SlotTabs() {
 									{
 										slot.timeSlots.map((timeSlot, i) => (
 											<Box key={i} ml={4}>
-												<Button variant='outlined'>{timeSlot}</Button>
+												<Button variant='outlined' onClick={()=>props.updateSlotSelected(timeSlot)}>{timeSlot}</Button>
 											</Box>
 										))
 									}

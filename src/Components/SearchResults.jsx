@@ -69,8 +69,8 @@ export default function SearchResults(props) {
 					<Box>
 						{
 							props.allData.map((data, index)=> (
-								<Box sx={{margin: '2rem'}}>
-									<HospitalCard hospitalName={data["Hospital Name"]} city={data.City} state={data.State} text={data.Address} rating={data["Hospital overall rating"]} />
+								<Box key={index} sx={{margin: '2rem'}}>
+									<HospitalCard hospitalName={data["Hospital Name"]} city={data.City} state={data.State} text={data.Address} rating={data["Hospital overall rating"]} updateBookings={props.updateBookings}/>
 								</Box>
 							))
 						}

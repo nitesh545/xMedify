@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Avatar, Box, Button, Card, CardMedia, Divider, IconButton, Typography} from "@mui/material";
 import img from "../assets/hospital.png"
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
@@ -6,6 +6,19 @@ import SlotTabs from "./SlotTabs";
 
 export default function HospitalCard(props) {
 	const [showSlots, setShowSlots] = React.useState(false);
+	const [slotSelected, setSlotSelected] = React.useState("");
+	const [prevSelectedSlots, setPrevSelectedSlots] = React.useState("");
+
+	useEffect(() => {
+		if(slotSelected.length < 1 || prevSelectedSlots == slotSelected){return;}
+		props.updateBookings(props.hospitalName, props.text, props.city, props.state, slotSelected, "Today", props.rating);
+		setPrevSelectedSlots(slotSelected);
+	}, [slotSelected]);
+
+	const updateSlotSelected = (value) => {
+		setSlotSelected(value);
+	}
+
 	return (
 		<Card sx={{width: '45vw', height: 'auto', borderRadius: '1rem'}}>
 			<Box sx={{display: 'flex', mt: '1rem', mb: '1rem'}}>
@@ -50,7 +63,7 @@ export default function HospitalCard(props) {
 
 			{
 				showSlots && (
-					<SlotTabs/>
+					<SlotTabs updateSlotSelected={updateSlotSelected}/>
 				)
 			}
 		</Card>

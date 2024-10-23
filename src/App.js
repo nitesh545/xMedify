@@ -27,6 +27,7 @@ function App() {
 	const [city, setCity] = React.useState("");
 	const [cities, setCities] = React.useState([]);
 	const [allData, setAllData] = React.useState([]);
+	const [bookings, setBookings] = React.useState([]);
 
 	useEffect(() => {
 		fetchStates();
@@ -40,12 +41,20 @@ function App() {
 		console.log(allData);
 	}, [allData]);
 
+	useEffect(() => {
+		console.log(bookings);
+	}, [bookings]);
+
 	const updateState = (value) => {
 		setState(value);
 	}
 
 	const updateCity = (value) => {
 		setCity(value);
+	}
+
+	const updateBookings = (hospitalName, hospitalAddress, city, state, time, date, rating) => {
+		setBookings((prevState) => [...prevState, {hospitalName, hospitalAddress, city, state, time, date, rating}]);
 	}
 
 	const fetchStates = () => {
@@ -76,7 +85,7 @@ function App() {
 			{/*<DownlaodApp />*/}
 			{/*<Footer />*/}
 
-			<SearchResults updateState={updateState} updateCity={updateCity} states={states} cities={cities} state={state} city={city} fetchHospitals={fetchHospitals} allData={allData}/>
+			<SearchResults updateState={updateState} updateCity={updateCity} states={states} cities={cities} state={state} city={city} fetchHospitals={fetchHospitals} allData={allData} updateBookings={updateBookings}/>
 		</ThemeProvider>
 	);
 }
