@@ -16,6 +16,7 @@ import Footer from "./Components/Footer";
 import DownlaodApp from "./Components/DownlaodApp";
 import Home from "./Components/Home";
 import FindPage from "./Components/FindPage";
+import HospitalCard from "./Components/HospitalCard";
 
 const theme = createTheme();
 
@@ -63,6 +64,7 @@ function App() {
 			<CssBaseline/>
 			<Navbar/>
 			<Home updateState={updateState} updateCity={updateCity} states={states} cities={cities} state={state} city={city} fetchHospitals={fetchHospitals} />
+			{/*<HospitalCard />*/}
 			<Offers/>
 			<FindBySpecialisation/>
 			<MedicalSpecialist/>
