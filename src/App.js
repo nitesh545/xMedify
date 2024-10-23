@@ -17,6 +17,7 @@ import DownlaodApp from "./Components/DownlaodApp";
 import Home from "./Components/Home";
 import FindPage from "./Components/FindPage";
 import HospitalCard from "./Components/HospitalCard";
+import SearchResults from "./Components/SearchResults";
 
 const theme = createTheme();
 
@@ -61,19 +62,21 @@ function App() {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<CssBaseline/>
-			<Navbar/>
-			<Home updateState={updateState} updateCity={updateCity} states={states} cities={cities} state={state} city={city} fetchHospitals={fetchHospitals} />
-			<HospitalCard />
-			<Offers/>
-			<FindBySpecialisation/>
-			<MedicalSpecialist/>
-			<PatientCaring/>
-			<BlogAndNews/>
-			<OurFamilies/>
-			<FrequentlyAskedQuestions/>
-			<DownlaodApp />
-			<Footer />
+			{/*<CssBaseline/>*/}
+			{/*<Navbar/>*/}
+			{/*<Home updateState={updateState} updateCity={updateCity} states={states} cities={cities} state={state} city={city} fetchHospitals={fetchHospitals} />*/}
+			{/*<HospitalCard />*/}
+			{/*<Offers/>*/}
+			{/*<FindBySpecialisation/>*/}
+			{/*<MedicalSpecialist/>*/}
+			{/*<PatientCaring/>*/}
+			{/*<BlogAndNews/>*/}
+			{/*<OurFamilies/>*/}
+			{/*<FrequentlyAskedQuestions/>*/}
+			{/*<DownlaodApp />*/}
+			{/*<Footer />*/}
+
+			<SearchResults updateState={updateState} updateCity={updateCity} states={states} cities={cities} state={state} city={city} fetchHospitals={fetchHospitals} allData={allData}/>
 		</ThemeProvider>
 	);
 }

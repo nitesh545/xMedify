@@ -7,16 +7,15 @@ import SlotTabs from "./SlotTabs";
 export default function HospitalCard(props) {
 	const [showSlots, setShowSlots] = React.useState(false);
 	return (
-		<Card sx={{width: '35vw', height: 'auto', borderRadius: '1rem'}}>
+		<Card sx={{width: '45vw', height: 'auto', borderRadius: '1rem'}}>
 			<Box sx={{display: 'flex', mt: '1rem', mb: '1rem'}}>
 				<CardMedia component='img' sx={{mr: 2}} src={img} alt='hosiptalimg'
 						   sx={{width: '7vw', padding: '1.25rem'}}/>
-				<Box>
-					<Typography variant='h5' sx={{color: 'rgba(20, 190, 240, 1)'}}>Fortis Hospital Richmond
-						Road</Typography>
-					<Typography variant='h6' fontWeight='bold'>Bangalore, Karnataka</Typography>
-					<Typography variant='h6'>Hosiptal Name</Typography>
-					<Box sx={{display: 'flex'}}>
+				<Box sx={{width: '25vw'}}>
+					<Typography variant='h5' sx={{color: 'rgba(20, 190, 240, 1)', mt: '1rem'}}>{props.hospitalName}</Typography>
+					<Typography variant='h6' fontWeight='bold'>{props.city}, {props.state}</Typography>
+					<Typography variant='h6'>{props.text}</Typography>
+					<Box sx={{display: 'flex', mt: '1rem'}}>
 						<Typography variant='h6' fontWeight='bold' color='rgba(2, 164, 1, 1)'>FREE</Typography>
 						<Typography variant='h6' color='rgba(120, 120, 135, 1)' sx={{
 							textDecoration: 'line-through',
@@ -37,7 +36,7 @@ export default function HospitalCard(props) {
 							display: 'flex'
 						}}>
 							<ThumbUpAltIcon fontSize='small' sx={{ml: '0.25rem', mt: '0.25rem'}}/>
-							<Typography variant='h6' sx={{pl: '0.5rem'}}>5</Typography>
+							<Typography variant='h6' sx={{pl: '0.5rem'}}>{props.rating == parseInt(props.rating) ? props.rating : 0}</Typography>
 						</Box>)
 					}
 				</Box>
