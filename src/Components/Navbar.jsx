@@ -1,5 +1,6 @@
-import React from 'react';
+// import React from 'react';
 import {AppBar, Box, Button, Toolbar, Typography} from "@mui/material";
+import {Link} from "react-router-dom"
 import logo from '../assets/logo.png'
 
 export default function Navbar() {
@@ -13,13 +14,15 @@ export default function Navbar() {
 			</Toolbar>
 			<Toolbar>
 				<Box sx={{display: 'flex', justifyContent: 'space-between', width: '100vw', margin: '0.5rem'}}>
-					<Box component="img" src={logo} alt="App Image" sx={{height: '2rem', marginLeft: '8rem', my: '0.5rem'}}/>
+					<Button component={Link} to="/">
+						<Box component="img" src={logo} alt="App Image" sx={{height: '2rem', marginLeft: '8rem', my: '0.5rem'}}/>
+					</Button>
 					<Box sx={{}}>
 						{
 							btns.map((btn, index) => (
-								<Button key={index} variant='text' sx={{color: 'black', margin: '0.5rem'}}>{btn}</Button>))
+								<Button key={index} variant='text' sx={{color: 'black', margin: '0.5rem'}} component={Link} to="/search">{btn}</Button>))
 						}
-						<Button variant="contained">My Bookings</Button>
+						<Button variant="contained" component={Link} to="/bookings">My Bookings</Button>
 					</Box>
 				</Box>
 			</Toolbar>

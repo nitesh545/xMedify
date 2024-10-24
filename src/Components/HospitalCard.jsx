@@ -53,12 +53,17 @@ export default function HospitalCard(props) {
 						</Box>)
 					}
 				</Box>
-				<Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', ml: '1.5rem'}}>
-					<Typography color='rgba(1, 164, 0, 1)' variant='body1' align='center'>Available Today</Typography>
-					<Button sx={{backgroundColor: 'rgba(20, 190, 240, 1)'}} variant='contained'
-							onClick={() => showSlots ? setShowSlots(false) : setShowSlots(true)}>Book FREE Center
-						Visit</Button>
-				</Box>
+				{
+					!props.noBookings ?
+					(
+						<Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', ml: '1.5rem'}}>
+							<Typography color='rgba(1, 164, 0, 1)' variant='body1' align='center'>Available Today</Typography>
+							<Button sx={{backgroundColor: 'rgba(20, 190, 240, 1)'}} variant='contained'
+									onClick={() => showSlots ? setShowSlots(false) : setShowSlots(true)}>Book FREE Center
+								Visit</Button>
+						</Box>
+					) : (null)
+				}
 			</Box>
 
 			{

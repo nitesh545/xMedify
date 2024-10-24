@@ -18,6 +18,7 @@ import Home from "./Components/Home";
 import FindPage from "./Components/FindPage";
 import HospitalCard from "./Components/HospitalCard";
 import SearchResults from "./Components/SearchResults";
+import MyBookings from "./Components/MyBookings";
 
 const theme = createTheme();
 
@@ -58,34 +59,57 @@ function App() {
 	}
 
 	const fetchStates = () => {
-		fetch("https://meddata-backend.onrender.com/states").then((response) => response.json()).then((res) => setStates(res)).catch((error) => {console.log(error);});
+		fetch("https://meddata-backend.onrender.com/states").then((response) => response.json()).then((res) => setStates(res)).catch((error) => {
+			console.log(error);
+		});
 	}
 
 	const fetchCities = () => {
-		fetch("https://meddata-backend.onrender.com/cities/" + state).then((response) => response.json()).then((res) => setCities(res)).catch((error) => {console.log(error);});
+		fetch("https://meddata-backend.onrender.com/cities/" + state).then((response) => response.json()).then((res) => setCities(res)).catch((error) => {
+			console.log(error);
+		});
 	}
 
 	const fetchHospitals = () => {
-		fetch(`https://meddata-backend.onrender.com/data?state=${state}&city=${city}`).then((response) => response.json()).then((res) => setAllData(res)).catch((error) => {console.log(error);});
+		fetch(`https://meddata-backend.onrender.com/data?state=${state}&city=${city}`).then((response) => response.json()).then((res) => setAllData(res)).catch((error) => {
+			console.log(error);
+		});
 	}
 
 	return (
 		<ThemeProvider theme={theme}>
-			{/*<CssBaseline/>*/}
-			{/*<Navbar/>*/}
-			{/*<Home updateState={updateState} updateCity={updateCity} states={states} cities={cities} state={state} city={city} fetchHospitals={fetchHospitals} />*/}
-			{/*<HospitalCard />*/}
-			{/*<Offers/>*/}
-			{/*<FindBySpecialisation/>*/}
-			{/*<MedicalSpecialist/>*/}
-			{/*<PatientCaring/>*/}
-			{/*<BlogAndNews/>*/}
-			{/*<OurFamilies/>*/}
-			{/*<FrequentlyAskedQuestions/>*/}
-			{/*<DownlaodApp />*/}
-			{/*<Footer />*/}
+			<CssBaseline/>
+			<Router>
+				<Navbar/>
+				<Routes>
+					<Route path="/" exact element={
+						<div>
+							< Home updateState={updateState} updateCity={updateCity} states={states} cities={cities}
+								   state={state}
+								   city={city} fetchHospitals={fetchHospitals}/>
+							<Offers/>
+							<FindBySpecialisation/>
+							<MedicalSpecialist/>
+							<PatientCaring/>
+							<BlogAndNews/>
+							<OurFamilies/>
+							<FrequentlyAskedQuestions/>
+							<DownlaodApp/>
+							<Footer/>
+						</div>
+					}/>
 
-			<SearchResults updateState={updateState} updateCity={updateCity} states={states} cities={cities} state={state} city={city} fetchHospitals={fetchHospitals} allData={allData} updateBookings={updateBookings}/>
+					<Route path="/search" element={
+						<SearchResults updateState={updateState} updateCity={updateCity} states={states} cities={cities}
+									   state={state} city={city} fetchHospitals={fetchHospitals} allData={allData}
+									   updateBookings={updateBookings}/>}/>
+
+					<Route path="/bookings" element={
+					<MyBookings updateState={updateState} updateCity={updateCity} states={states} cities={cities}
+								state={state} city={city} fetchHospitals={fetchHospitals} bookings={bookings}
+								updateBookings={updateBookings}/>} />
+				</Routes>
+			</Router>
 		</ThemeProvider>
 	);
 }

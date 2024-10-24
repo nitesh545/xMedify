@@ -15,14 +15,13 @@ export default function SearchResults(props) {
 	}, []);
 	return (
 		<div>
-			<Navbar />
 			<Box sx={{backgroundColor: 'rgba(12, 140, 229, 1)', borderRadius: '2rem', borderTopLeftRadius: '0rem', borderTopRightRadius: '0rem', width: '100vw', height: '6vh', marginTop: '8rem'}}>
 
 			</Box>
 			<Card
 				sx={{display: 'flex', width: '60vw', justifyContent: 'flex-end', marginTop: '-2rem', backgroundColor: 'white', padding: '2rem', borderRadius: '2rem', marginLeft: '20rem'}}>
 				<FormControl fullWidth>
-					<InputLabel id="demo-simple-select-label">Select</InputLabel>
+					<InputLabel id="demo-simple-select-label">State</InputLabel>
 					<Select value={props.state} label='Select' onChange={(e) => props.updateState(e.target.value)}>
 						{
 							props.states.map((state, index) => (
@@ -34,7 +33,7 @@ export default function SearchResults(props) {
 					</Select>
 				</FormControl>
 				<FormControl fullWidth>
-					<InputLabel id="demo-simple-select-label">Select</InputLabel>
+					<InputLabel id="demo-simple-select-label">City</InputLabel>
 					<Select value={props.city} label='Select' onChange={(e) => props.updateCity(e.target.value)}>
 						{
 							props.cities.map((cities, index) => (

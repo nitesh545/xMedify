@@ -11,6 +11,7 @@ import {
 	InputLabel,
 	FormControl
 } from "@mui/material";
+import {Link} from "react-router-dom";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import img1 from "../assets/LookingFor/1.png"
 import img2 from "../assets/LookingFor/2.png"
@@ -39,7 +40,7 @@ export default function FindPage(props) {
 			<Box
 				sx={{display: 'flex', width: '50vw', padding: '2.5rem', marginLeft: '12rem', justifyContent: 'center'}}>
 				<FormControl fullWidth>
-					<InputLabel id="demo-simple-select-label">Select</InputLabel>
+					<InputLabel id="demo-simple-select-label">State</InputLabel>
 					<Select value={props.state} label='Select' onChange={(e) => props.updateState(e.target.value)}>
 						{
 							props.states.map((state, index) => (
@@ -51,7 +52,7 @@ export default function FindPage(props) {
 					</Select>
 				</FormControl>
 				<FormControl fullWidth>
-					<InputLabel id="demo-simple-select-label">Select</InputLabel>
+					<InputLabel id="demo-simple-select-label">City</InputLabel>
 					<Select value={props.city} label='Select' onChange={(e) => props.updateCity(e.target.value)}>
 						{
 							props.cities.map((cities, index) => (
@@ -64,7 +65,7 @@ export default function FindPage(props) {
 				</FormControl>
 				<Button variant="contained"
 						sx={{backgroundColor: 'rgba(42, 168, 255, 1)', width: '15vw', marginLeft: '2rem'}}
-						startIcon={<SearchOutlinedIcon/>} onClick={()=>props.fetchHospitals()}>Search</Button>
+						startIcon={<SearchOutlinedIcon/>} onClick={()=>props.fetchHospitals()} component={Link} to='/search'>Search</Button>
 			</Box>
 			<Typography variant="h4" color="rgba(16, 40, 81, 1)" align='center'>You may be looking for</Typography>
 			<Box sx={{mt: '2rem', display: 'flex', justifyContent: 'center'}}>
