@@ -23,12 +23,14 @@ import MyBookings from "./Components/MyBookings";
 const theme = createTheme();
 
 function App() {
+	const storedBookings = JSON.parse(localStorage.getItem("bookings"));
+
 	const [state, setState] = React.useState("");
 	const [states, setStates] = React.useState([]);
 	const [city, setCity] = React.useState("");
 	const [cities, setCities] = React.useState([]);
 	const [allData, setAllData] = React.useState([]);
-	const [bookings, setBookings] = React.useState([]);
+	const [bookings, setBookings] = React.useState(storedBookings ? storedBookings : []);
 
 	useEffect(() => {
 		fetchStates();
@@ -45,6 +47,10 @@ function App() {
 	useEffect(() => {
 		console.log(bookings);
 	}, [bookings]);
+
+	useEffect(()=>{
+		localStorage.setItem("bookings", JSON.stringify(bookings));
+	},[bookings]);
 
 	const updateState = (value) => {
 		setState(value);
@@ -107,7 +113,7 @@ function App() {
 					<Route path="/bookings" element={
 					<MyBookings updateState={updateState} updateCity={updateCity} states={states} cities={cities}
 								state={state} city={city} fetchHospitals={fetchHospitals} bookings={bookings}
-								updateBookings={updateBookings}/>} />
+								updateBookings={updateBookings} />} />
 				</Routes>
 			</Router>
 		</ThemeProvider>

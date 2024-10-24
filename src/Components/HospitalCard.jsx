@@ -7,16 +7,16 @@ import SlotTabs from "./SlotTabs";
 export default function HospitalCard(props) {
 	const [showSlots, setShowSlots] = React.useState(false);
 	const [slotSelected, setSlotSelected] = React.useState("");
-	const [prevSelectedSlots, setPrevSelectedSlots] = React.useState("");
 
 	useEffect(() => {
-		if(slotSelected.length < 1 || prevSelectedSlots == slotSelected){return;}
-		props.updateBookings(props.hospitalName, props.text, props.city, props.state, slotSelected, "Today", props.rating);
-		setPrevSelectedSlots(slotSelected);
+		console.log(slotSelected);
 	}, [slotSelected]);
 
 	const updateSlotSelected = (value) => {
 		setSlotSelected(value);
+		if (value.length > 0) {
+			props.updateBookings(props.hospitalName, props.text, props.city, props.state, value, "Today", props.rating);
+		}
 	}
 
 	return (
@@ -62,7 +62,11 @@ export default function HospitalCard(props) {
 									onClick={() => showSlots ? setShowSlots(false) : setShowSlots(true)}>Book FREE Center
 								Visit</Button>
 						</Box>
-					) : (null)
+					) : (
+							<Box sx={{display: 'flex', justifyContent: 'flex-end', ml: '1.5rem', py: '4rem', transform: 'translate(10rem,-2.5rem)', height: '10rem'}}>
+								<Button variant='outlined' sx={{color:'rgba(0, 113, 0, 1)', borderColor: 'rgba(0, 113, 0, 1)', ml: '2rem',}}>Today</Button>
+							</Box>
+						)
 				}
 			</Box>
 

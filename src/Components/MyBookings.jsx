@@ -35,7 +35,7 @@ export default function MyBookings(props) {
 			</Card>
 
 			<Box sx={{
-				width: '85vw',
+				width: '100vw',
 				height: 'auto',
 				display: 'flex',
 				backgroundColor: 'rgba(231, 240, 255, 1)',
